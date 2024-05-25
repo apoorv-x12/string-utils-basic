@@ -89,7 +89,8 @@ const {
 } = require('./path/to/your/module');
 
 // Example usage:
-console.log(capitalizeString("hello world")); // Outputs: "Hello World"
+console.log(capitalizeString("hello world")); 
+// Outputs: "Hello World"
 
 Installation
 Clone the repository:
@@ -114,9 +115,11 @@ Project By
 Apoorv Shrivastava
 
 Contributing
+
 Feel free to submit issues or pull requests if you have suggestions or improvements.
 
 License
+
 This project is licensed under the MIT License.
 
 This summary provides a clear overview of the functionality provided by your string utility functions, along with instructions on how to use, install, and test them.
