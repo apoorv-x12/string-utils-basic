@@ -1,0 +1,5 @@
+# inter conversion between snake,kebab and camel case
+# application of regex:
+   - to find if emails, phone numbers etc exist in a string
+   - to extract the email, phone number etc from a string * return their count etc
+# Validation like email,password,password etc validation
