@@ -1,4 +1,4 @@
-String Utilities Basic
+String Utilities Basic \n
 A collection of basic string manipulation functions written in JavaScript. These functions provide a variety of utilities for validating, formatting, and transforming strings.
 
 Functions Overview
@@ -98,11 +98,11 @@ git clone https://github.com/your-username/string-utils-basic.git
 Navigate to the project directory:
 cd string-utils-basic
 
-Install the dependencies:
+Install the dependencies:\n
 npm install
 
 Running Tests
-Run the tests to ensure everything is working correctly:
+Run the tests to ensure everything is working correctly:\n
 npm test
 
 Contributing
