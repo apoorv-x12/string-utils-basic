@@ -1,15 +1,15 @@
 {
   "name": "string-utils-basic",
   "version": "1.0.0",
-  "description": "",
+  "description": "basic string utils library",
   "main": "index.js",
   "scripts": {
     "test": "jest",
     "serve": "nodemon src/index.js"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Apoorv Shrivastava",
+  "license": "MIT",
   "devDependencies": {
     "jest": "^29.7.0",
     "nodemon": "^3.1.0"
