@@ -10,6 +10,14 @@
   "keywords": [],
   "author": "Apoorv Shrivastava",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/apoorv-x12/string-utils-basic.git"
+  },
+  "bugs": {
+    "url": "https://github.com/apoorv-x12/string-utils-basic/issues"
+  },
+  "homepage": "https://github.com/apoorv-x12/string-utils-basic#readme",
   "devDependencies": {
     "jest": "^29.7.0",
     "nodemon": "^3.1.0"
