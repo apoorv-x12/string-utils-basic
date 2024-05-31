@@ -2,7 +2,7 @@
   "name": "string-utils-basic",
   "version": "1.0.0",
   "description": "basic string utils library",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
     "test": "jest",
     "serve": "nodemon src/index.js",

@@ -40,7 +40,7 @@ const capitalizeString = (string) => {
 }
 
 const countWordsInString = (string) => {
-
+    
     const stringCheck = basicValidation(string)
 
     if (stringCheck==="Give valid string") 
