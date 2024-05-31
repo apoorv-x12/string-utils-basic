@@ -1,6 +1,6 @@
 {
   "name": "string-utils-basic",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "basic string utils library",
   "main": "src/index.js",
   "scripts": {
@@ -22,5 +22,8 @@
   "devDependencies": {
     "jest": "^29.7.0",
     "nodemon": "^3.1.0"
+  },
+  "dependencies": {
+    "string-utils-basic": "^1.0.1"
   }
 }
