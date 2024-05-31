@@ -86,13 +86,16 @@ const {
     snakeString,
     kebabString,
     camelString
-} = require('./path/to/your/module');
+} = require('string-utils-basic');
 
 // Example usage:
-console.log(capitalizeString("hello world")); 
+
+console.log(capitalizeString("hello world"));
+
 // Outputs: "Hello World"
 
-Installation
+Installation-
+
 Clone the repository:
 
 git clone https://github.com/your-username/string-utils-basic.git
