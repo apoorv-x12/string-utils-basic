@@ -8,7 +8,7 @@
     "serve": "nodemon src/index.js",
     "dev": "nodemon src/index.js"
   },
-  "keywords": [],
+  "keywords": ["string", "string-utils","regex", "utilities", "utils", "string manipulation", "text processing"],
   "author": "Apoorv Shrivastava",
   "license": "MIT",
   "repository": {
