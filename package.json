@@ -1,6 +1,6 @@
 {
   "name": "string-utils-basic",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "basic string utils library",
   "main": "src/index.js",
   "scripts": {
@@ -8,7 +8,7 @@
     "serve": "nodemon src/index.js",
     "dev": "nodemon src/index.js"
   },
-  "keywords": [],
+  "keywords": ["string", "string-utils","regex", "utilities", "utils", "string manipulation", "text processing"],
   "author": "Apoorv Shrivastava",
   "license": "MIT",
   "repository": {
