@@ -1,5 +1,5 @@
 {
-  "name": "@apoorv-x12/string-utils-basic",
+  "name": "string-utils-basic",
   "version": "1.0.0",
   "description": "basic string utils library",
   "main": "index.js",
