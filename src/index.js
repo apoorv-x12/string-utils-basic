@@ -118,6 +118,7 @@ const camelString = (string) => {
     const filterString = removeNonAlphaNumericExceptSpacesInBetween(string)
 
     const a = filterString.split(" ")[0].toLowerCase()
+    console.log(a)
     const b = filterString.split(" ").slice(1).map(word=>word[0].toUpperCase()+ word.slice(1).toLowerCase()).join('')
     return a+b
 }
@@ -134,5 +135,12 @@ module.exports = {
     truncateString,
     snakeString,
     kebabString,
-    camelString
+    camelString,
+  
 }
+const {delJsComments, getJsComments, hasJsComments} = require('./regex/jsComment.js');
+module.exports = {...module.exports, delJsComments, getJsComments, hasJsComments}
+
+// const {isCamelCase, isSnakeCase, isKebabCase} = require('./boolean/bool.js');
+// module.exports = {...module.exports,isCamelCase, isSnakeCase, isKebabCase}
+
