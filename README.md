@@ -1,4 +1,4 @@
-# String Utilities Basic
+## String Utilities Basic
 
 A collection of basic string manipulation functions written in JavaScript. These functions provide a variety of utilities for validating, formatting, and transforming strings.
 
@@ -16,6 +16,10 @@ A collection of basic string manipulation functions written in JavaScript. These
 | `truncateString`                         | Truncates the string to a specified length and appends "..." if truncated.                         |
 | `snakeString`                            | Converts the string to snake_case.                                                                |
 | `kebabString`                            | Converts the string to kebab-case.                                                                |
+| `jsComments`                             | Returns a regex pattern to match JavaScript comments.                                              |
+| `hasJsComments`                          | Checks if a string has JavaScript comments.                                                        |
+| `getJsComments`                          | Retrieves JavaScript comments from a string.                                                       |
+| `delJsComments`                          | Deletes JavaScript comments from a string.                                                         |
 
 ## Usage
 
@@ -33,6 +37,10 @@ const {
     truncateString,
     snakeString,
     kebabString,
+    jsComments,
+    hasJsComments,
+    getJsComments,
+    delJsComments
 } = require('string-utils-basic');
 
 // Example usage:
@@ -41,15 +49,21 @@ console.log(capitalizeString("hello world"));
 
 // Outputs: "Hello World"
 
-# Installation
+```
 
+## Installation
+
+```javascript
 git clone https://github.com/your-username/string-utils-basic.git
 cd string-utils-basic
 npm install
+```
 
+# Running Tests 
 
-# Running Tests
+```javascript
 npm test
+```
 
 # Project By
 
