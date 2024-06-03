@@ -1,21 +1,26 @@
-const {basicValidation,kebabString,camelString,snakeString} = require('../index')
+const {basicValidation} = require('../index')
 
 const isKebabCase = (string) => {
     const stringCheck = basicValidation(string)
 
     if (stringCheck==="Give valid string" || stringCheck==="") 
-        return stringCheck
+        return stringCheck===""? false : stringCheck
     
-    return kebabString(string)===string
+    const kebabCaseRegex = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
+
+    return kebabCaseRegex.test(string);
 }
 
 const isCamelCase = (string) => {
 
     const stringCheck = basicValidation(string)
     if (stringCheck==="Give valid string" || stringCheck==="")
-        return stringCheck
+        return stringCheck===""? false : stringCheck
+    
+    const camelCaseRegex = /^[a-z]+(?:[A-Z0-9][a-z0-9]*)*$/;
 
-    return camelString(string)===string
+    return camelCaseRegex.test(string);
+
 }
 
 const isSnakeCase = (string) => {
@@ -23,9 +28,11 @@ const isSnakeCase = (string) => {
     const stringCheck = basicValidation(string)
 
     if (stringCheck==="Give valid string" || stringCheck==="")
-        return stringCheck
+       return stringCheck===""? false : stringCheck
 
-    return snakeString(string)===string
+    const snakeCaseRegex = /^[a-z0-9]+(?:_[a-z0-9]+)*$/;
+
+    return snakeCaseRegex.test(string);
 }
 
 module.exports = {

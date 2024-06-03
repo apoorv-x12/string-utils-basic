@@ -95,7 +95,7 @@ test('capitalizeString does not change words that are already capitalized', () =
 });
 
 test('capitalizeString does not change words that are empty', () => {
-    expect(capitalizeString('hello world and goodbye ')).toBe('Hello World And Goodbye ');
+    expect(capitalizeString('hello world and g1@oodbye ')).toBe('Hello World And G1@oodbye ');
 });
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
@@ -114,7 +114,7 @@ test('countWordsInString returns 0 when given a string with no words', () => {
 
 test('countWordsInString returns the correct number of words when given a string with multiple words', () => {
     expect(countWordsInString('Hello World')).toBe(2);
-    expect(countWordsInString('   Hello   World   ')).toBe(2);
+    expect(countWordsInString('   Hello   World 1@Sada  ')).toBe(3);
 });
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
@@ -136,22 +136,36 @@ test('reverseString returns "Give valid string" when given a non-string input', 
 });
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
-test('reverseWordsInString returns the same string when given a string with one word', () => {
-    expect(reverseWordsInString('Hello')).toBe('Hello');
+describe('reverseWordsInString', () => {
+    test('returns "Give valid string" when given a non-string value', () => {
+        expect(reverseWordsInString(123)).toBe("Give valid string");
+    });
+
+    test('returns empty string when given an empty string', () => {
+        expect(reverseWordsInString("")).toBe("");
+    });
+
+    test('reverses words in a regular string while preserving spaces', () => {
+        expect(reverseWordsInString("This is a test")).toBe("test a is This");
+    });
+
+    test('handles strings with multiple spaces between words and preserves spaces', () => {
+        expect(reverseWordsInString("Hello    World")).toBe("World    Hello");
+    });
+
+    test('handles strings with tabs and newlines, preserving them', () => {
+        expect(reverseWordsInString("This is\ta test\nstring")).toBe("string\ntest a\tis This");
+    });
+
+    test('handles a single word', () => {
+        expect(reverseWordsInString("SingleWord")).toBe("SingleWord");
+    });
+
+    test('trims leading and trailing spaces', () => {
+        expect(reverseWordsInString("  Leading and trailing spaces  ")).toBe("  spaces trailing and Leading  ");
+    });
 });
 
-test('reverseWordsInString returns the reversed string when given a string with multiple words', () => {
-    expect(reverseWordsInString('Hello World')).toBe('World Hello');
-    expect(reverseWordsInString('  Hell!@ j World')).toBe('World j Hell!@  ');
-});
-
-test('reverseWordsInString returns "Give valid string" when given a non-string input', () => {
-    expect(reverseWordsInString(123)).toBe('Give valid string');
-});
-
-test('reverseWordsInString returns the same string when given an empty string', () => {
-    expect(reverseWordsInString('')).toBe('');
-});
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
 test('truncateString returns the original string if it is shorter than the specified length', () => {
@@ -179,6 +193,7 @@ test('truncateString returns an empty string if the input is an empty string and
 });
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
+
 test('snakeString returns "Give valid string" when given an invalid input', () => {
     expect(snakeString(123)).toBe('Give valid string');
     expect(snakeString(null)).toBe('Give valid string');

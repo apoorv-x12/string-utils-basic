@@ -9,6 +9,8 @@ const basicValidation = (string) => {
      return 'ok'
 }
 
+module.exports = { basicValidation }
+
 const removeAllWhiteSpacesExceptOnesInBetween = (string) => {
 
     const stringCheck = basicValidation(string)
@@ -50,7 +52,7 @@ const countWordsInString = (string) => {
 
     const word = removeAllWhiteSpacesExceptOnesInBetween(string)
 
-    return word===""? 0: removeAllWhiteSpacesExceptOnesInBetween(string).split(" ").length;
+    return word===""? 0: word.split(" ").length;
 }
 
 const reverseString = (string) => {
@@ -70,18 +72,23 @@ const reverseWordsInString = (string) => {
     if (stringCheck==="Give valid string" || stringCheck==="") 
         return stringCheck
 
-    return string.split(" ").reverse().join(" ");
+    const wordsAndSpaces = string.match(/\S+|\s+/g) || [];
+
+    return wordsAndSpaces.reverse().join("");
 }
 
 const truncateString = (string, num=20) => {
     
     const stringCheck = basicValidation(string)
 
-    if (stringCheck==="Give valid string" || stringCheck==="") 
+    if (stringCheck === "Give valid string" || stringCheck==="") 
         return stringCheck
 
     return string.length<=num ? string : string.substring(0, 20) + "...";
 }
+
+// Import boolean functions
+const {isCamelCase, isSnakeCase, isKebabCase} = require('./boolean/bool.js');
 
 const snakeString = (string) => {
 
@@ -90,9 +97,13 @@ const snakeString = (string) => {
     if (stringCheck==="Give valid string" || stringCheck==="") 
         return stringCheck
 
-    const filterString = removeNonAlphaNumericExceptSpacesInBetween(string)
-    
-    return filterString.split(" ").map(word=>word.toLowerCase()).join("_");
+    const filterString = string.replace(/[^a-zA-Z\d\s_]/g,'').replace(/\s+/g,' ').trim()
+    if (filterString==="") return filterString
+
+    return filterString.split(" ").map(word=>{
+        if (isSnakeCase(word)) return word
+        return word.toLowerCase()
+    }).join("_");
     
 }
 
@@ -103,9 +114,13 @@ const kebabString = (string) => {
     if (stringCheck==="Give valid string" || stringCheck==="") 
         return stringCheck
 
-    const filterString = removeNonAlphaNumericExceptSpacesInBetween(string)
-    
-    return filterString.split(" ").map(word=>word.toLowerCase()).join("-");
+    const filterString = string.replace(/[^a-zA-Z\d\s-]/g,'').replace(/\s+/g,' ').trim()
+    if (filterString==="") return filterString
+
+    return filterString.split(" ").map(word=>{
+        if (isKebabCase(word)) return word
+        return word.toLowerCase()
+    }).join("-");
 }
 
 const camelString = (string) => {
@@ -115,17 +130,22 @@ const camelString = (string) => {
     if (stringCheck==="Give valid string" || stringCheck==="") 
         return stringCheck
 
-    const filterString = removeNonAlphaNumericExceptSpacesInBetween(string)
-
-    const a = filterString.split(" ")[0].toLowerCase()
-    console.log(a)
-    const b = filterString.split(" ").slice(1).map(word=>word[0].toUpperCase()+ word.slice(1).toLowerCase()).join('')
+    const filterString = string.replace(/[^a-zA-Z\d\s]/g,'').replace(/\s+/g,' ').trim()
+    if (filterString==="") return filterString
+    
+    const changed = isCamelCase(filterString.split(" ")[0]) 
+    const a = changed ? filterString.split(" ")[0] : filterString.split(" ")[0].toLowerCase()
+    
+    const b = filterString.split(" ").slice(1).map(word=>{
+        return word[0].toUpperCase()+ word.slice(1).toLowerCase()    
+    }).join('')
+    
     return a+b
 }
 
 module.exports = { 
-    
-    basicValidation,
+
+    ...module.exports,
     removeAllWhiteSpacesExceptOnesInBetween,
     removeNonAlphaNumericExceptSpacesInBetween,
     capitalizeString,
@@ -136,11 +156,19 @@ module.exports = {
     snakeString,
     kebabString,
     camelString,
-  
+    isCamelCase,
+    isSnakeCase,
+    isKebabCase
 }
-const {delJsComments, getJsComments, hasJsComments} = require('./regex/jsComment.js');
-module.exports = {...module.exports, delJsComments, getJsComments, hasJsComments}
 
-// const {isCamelCase, isSnakeCase, isKebabCase} = require('./boolean/bool.js');
-// module.exports = {...module.exports,isCamelCase, isSnakeCase, isKebabCase}
+const {delJsComments, getJsComments, hasJsComments,countJsComments} = require('./regex/jsComment.js');
+module.exports = {...module.exports, delJsComments, getJsComments, hasJsComments,countJsComments}
+
+const {delCssComments, getCssComments, hasCssComments,countCssComments} = require('./regex/cssComment.js');
+module.exports = {...module.exports, delCssComments, getCssComments, hasCssComments,countCssComments}
+
+const {urlValidation,getQueryParams,getQueryString}=require('./url/url.js');
+module.exports = {...module.exports,urlValidation,getQueryParams,getQueryString}
+
+
 

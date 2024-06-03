@@ -21,7 +21,8 @@ const hasJsComments = (string) => {
   
       return pattern in check 
       ? 
-      pattern : pattern.test(string)
+      pattern===""? false: pattern 
+      : pattern.test(string)
 }
 
 const getJsComments = (string) => {
@@ -42,32 +43,16 @@ const delJsComments = (string) => {
       pattern : string.replace(pattern, '').replace(/\n\s*\n/g, '\n\n')
 }
 
-module.exports = { hasJsComments, getJsComments, delJsComments, jsComments }
-
-console.log(hasJsComments(`var sample    = 0;
-var new       = 1;
-var my_string = \"Hello World!\";
-
-// This is a comment!
-
-function do_stuff(){
-	alert(my_string);//another comment
+const countJsComments = (string) => {
+    
+  const pattern=jsComments(string)
+    return pattern in check 
+      ?
+      pattern===""? 0: pattern
+      :  string.match(pattern)===null? 0: string.match(pattern).length
 }
 
-/* This is
- * a multiline
- * comment!
- */
+module.exports = { hasJsComments, getJsComments, delJsComments, jsComments, countJsComments }
 
-var something;
-
-/* programs/applications 16/*(4*2)=2 */
-
-if(sample > new){
-  do_stuff(/* arguments here */);
-}
-
-//
-
-/**/
-`))
+// console.log(countJsComments(`var sample    = 0
+// `))

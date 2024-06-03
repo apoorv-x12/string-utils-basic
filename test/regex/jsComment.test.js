@@ -2,7 +2,8 @@ const {
     jsComments,
     getJsComments,
     hasJsComments,
-    delJsComments
+    delJsComments,
+    countJsComments
 } = require('../../src/regex/jsComment');
 
 test('jsComments returns "" when given an empty string', () => {
@@ -26,7 +27,7 @@ test('jsComments returns a regular expression that matches multi-line comments',
 
 describe('hasJsComments', () => {
   it('should return "" when given an empty string', () => {
-    expect(hasJsComments('')).toBe("");
+    expect(hasJsComments('')).toBe(false);
   });
 
   it('should return false when given a string without comments', () => {
@@ -113,4 +114,35 @@ describe('delJsComments', () => {
     expect(delJsComments(123)).toBe('Give valid string');
   });
 
+});
+//////////////////////////////////////////////////////////////////////////////////////////
+
+test('countJsComments returns 0 for an empty string', () => {
+  expect(countJsComments('')).toBe(0);
+});
+
+test('countJsComments returns 0 for a string without comments', () => {
+  expect(countJsComments('var sample = 0;')).toBe(0);
+});
+
+test('countJsComments returns "Give valid string" for a non-string input', () => {
+  expect(countJsComments([])).toBe('Give valid string');
+});
+
+test('countJsComments returns the correct number of single-line comments', () => {
+  expect(countJsComments('// This is a single-line comment\nvar sample = 0;')).toBe(1);
+  expect(countJsComments('var sample = 0;\n// This is another single-line comment')).toBe(1);
+  expect(countJsComments('var sample = 0;\n// This is a single-line comment\n// This is another single-line comment')).toBe(2);
+});
+
+test('countJsComments returns the correct number of multi-line comments', () => {
+  expect(countJsComments('/* This is a multi-line comment */\nvar sample = 0;')).toBe(1);
+  expect(countJsComments('var sample = 0;\n/* This is another multi-line comment */')).toBe(1);
+  expect(countJsComments('var sample = 0;\n/* This is a multi-line comment */\n/* This is another multi-line comment */')).toBe(2);
+});
+
+test('countJsComments returns the correct number of mixed comments', () => {
+  expect(countJsComments('// This is a single-line comment\nvar sample = 0;\n/* This is a multi-line comment */')).toBe(2);
+  expect(countJsComments('/* This is a multi-line comment */\nvar sample = 0;\n// This is a single-line comment')).toBe(2);
+  expect(countJsComments('/* This is a multi-line comment */\nvar sample = 0;\n/* This is another multi-line comment */\n// This is a single-line comment')).toBe(3);
 });

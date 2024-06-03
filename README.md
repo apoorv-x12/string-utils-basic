@@ -4,22 +4,33 @@ A collection of basic string manipulation functions written in JavaScript. These
 
 ## Functions Overview
 
-| Function Name                            | Description                                                                                        |
-|------------------------------------------|----------------------------------------------------------------------------------------------------|
-| `basicValidation`                        | Validates if the input is a string.                                                               |
-| `removeAllWhiteSpacesExceptOnesInBetween`| Removes all unnecessary whitespace characters, except for single spaces between words.             |
-| `removeNonAlphaNumericExceptSpacesInBetween` | Removes all non-alphanumeric characters except spaces.                                           |
-| `capitalizeString`                       | Capitalizes the first letter of each word in the string.                                           |
-| `countWordsInString`                     | Counts the number of words in a string.                                                           |
-| `reverseString`                          | Reverses the entire string.                                                                       |
-| `reverseWordsInString`                   | Reverses the order of words in the string.                                                        |
-| `truncateString`                         | Truncates the string to a specified length and appends "..." if truncated.                         |
-| `snakeString`                            | Converts the string to snake_case.                                                                |
-| `kebabString`                            | Converts the string to kebab-case.                                                                |
-| `jsComments`                             | Returns a regex pattern to match JavaScript comments.                                              |
-| `hasJsComments`                          | Checks if a string has JavaScript comments.                                                        |
-| `getJsComments`                          | Retrieves JavaScript comments from a string.                                                       |
-| `delJsComments`                          | Deletes JavaScript comments from a string.                                                         |
+| Function Name                                | Description                                                                                   |
+|----------------------------------------------|-----------------------------------------------------------------------------------------------|
+| `basicValidation`                            | Validates if the input is a string.                                                          |
+| `removeAllWhiteSpacesExceptOnesInBetween`    | Removes all unnecessary whitespace characters, except for single spaces between words.        |
+| `removeNonAlphaNumericExceptSpacesInBetween` | Removes all non-alphanumeric characters except spaces.                                        |
+| `capitalizeString`                           | Capitalizes the first letter of each word in the string.                                       |
+| `countWordsInString`                         | Counts the number of words in a string.                                                       |
+| `reverseString`                              | Reverses the entire string.                                                                   |
+| `reverseWordsInString`                       | Reverses the order of words in the string.                                                    |
+| `truncateString`                             | Truncates the string to a specified length and appends "..." if truncated.                      |
+| `snakeString`                                | Converts the string to snake_case.                                                            |
+| `kebabString`                                | Converts the string to kebab-case.                                                            |
+| `camelString`                                | Converts the string to camelCase.                                                             |
+| `isCamelCase`, `isSnakeCase`, `isKebabCase` | Boolean functions to check if a string is in camelCase, snake_case, or kebab-case, respectively.|
+| `delJsComments`                              | Deletes JavaScript comments from a string.                                                     |
+| `getJsComments`                              | Retrieves JavaScript comments from a string.                                                   |
+| `hasJsComments`                              | Checks if a string has JavaScript comments.                                                    |
+| `countJsComments`                            | Counts the number of JavaScript comments in a string.                                           |
+| `delCssComments`                             | Deletes CSS comments from a string.                                                            |
+| `getCssComments`                             | Retrieves CSS comments from a string.                                                          |
+| `hasCssComments`                             | Checks if a string has CSS comments.                                                           |
+| `countCssComments`                           | Counts the number of CSS comments in a string.                                                 |
+| `urlValidation`                              | Validates URLs according to a specified pattern.                                                |
+| `getQueryParams`                             | Extracts query parameters from a URL string.                                                     |
+| `getQueryString`                             | Extracts the query string from a URL string.                                                    |
+
+**Note:** Digits are included in snake_case, kebab-case, and camelCase.
 
 ## Usage
 
@@ -37,10 +48,21 @@ const {
     truncateString,
     snakeString,
     kebabString,
-    jsComments,
-    hasJsComments,
+    camelString,
+    isCamelCase,
+    isSnakeCase,
+    isKebabCase,
+    delJsComments,
     getJsComments,
-    delJsComments
+    hasJsComments,
+    countJsComments,
+    delCssComments,
+    getCssComments,
+    hasCssComments,
+    countCssComments,
+    urlValidation,
+    getQueryParams,
+    getQueryString
 } = require('string-utils-basic');
 
 // Example usage:
