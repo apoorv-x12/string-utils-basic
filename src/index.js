@@ -170,5 +170,8 @@ module.exports = {...module.exports, delCssComments, getCssComments, hasCssComme
 const {urlValidation,getQueryParams,getQueryString}=require('./url/url.js');
 module.exports = {...module.exports,urlValidation,getQueryParams,getQueryString}
 
+const { hasIpAddress, getIpAddresses, delIpAddresses, countIpAddresses }= require('./regex/ipAddress.js');
+module.exports = {...module.exports, hasIpAddress, getIpAddresses, delIpAddresses, countIpAddresses}
 
-
+const  { hasEmail, getEmails, delEmails, countEmails} = require('./validation/email.js');
+module.exports = {...module.exports, hasEmail, getEmails, delEmails, countEmails}
