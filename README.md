@@ -2,7 +2,7 @@
 
 A collection of basic string manipulation functions written in JavaScript. These functions provide a variety of utilities for validating, formatting, and transforming strings.
 
-## Functions Overview
+## Functions Overview:
 
 | Function Name                                | Description                                                                                   |
 |----------------------------------------------|-----------------------------------------------------------------------------------------------|
