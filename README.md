@@ -94,7 +94,7 @@ console.log(capitalizeString("hello world"));
 ```javascript
 git clone https://github.com/your-username/string-utils-basic.git
 cd string-utils-basic
-npm install
+npm i
 ```
 
 # Running Tests 
