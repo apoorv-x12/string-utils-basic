@@ -1,6 +1,6 @@
 {
   "name": "string-utils-basic",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "basic string utils library",
   "main": "src/index.js",
   "scripts": {
@@ -9,7 +9,7 @@
     "dev": "nodemon src/index.js"
   },
   "keywords": [
-    "string", "string-utils", "regex", "utilities", "utils", "string manipulation", "text processing","validation","whitespace","alpha-numeric","capitalization","word count","reverse","truncate","snake case","kebab case","camel case","comments","JavaScript comments","CSS comments","URL validation","query parameters","IP address","email","email validation","IP validation","text utilities","string functions","text cleanup","text validation"
+    "string", "string-utils", "regex", "utilities", "utils", "string manipulation", "text processing","validation","whitespace","alpha-numeric","capitalization","word count","reverse","truncate","snake case","kebab case","camel case","comments","JavaScript comments","CSS comments","URL validation","query parameters","IP address","email","email validation","IP validation","text utilities","string functions","text cleanup","text validation","emojis","emojis validation","emoji delete","emoji getter","date validation"
 ]
 ,
   "author": "Apoorv Shrivastava",

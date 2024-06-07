@@ -2,7 +2,7 @@
 
 A collection of basic string manipulation functions written in JavaScript. These functions provide a variety of utilities for validating, formatting, and transforming strings.
 
-## Functions Overview:
+## Functions Overview
 
 | Function Name                                | Description                                                                                   |
 |----------------------------------------------|-----------------------------------------------------------------------------------------------|
@@ -37,6 +37,11 @@ A collection of basic string manipulation functions written in JavaScript. These
 | `getEmails`                                  | Retrieves email addresses from a string.                                                      |
 | `delEmails`                                  | Deletes email addresses from a string.                                                        |
 | `countEmails`                                | Counts the number of email addresses in a string.                                             |
+| `dateValidation`                             | Validates the format of a date string. Returns `true` if the date string matches common date formats, otherwise `false`. |
+| `hasEmoji`                                   | Checks if a string contains emojis.                                                           |
+| `getEmojis`                                  | Retrieves emojis from a string.                                                               |
+| `delEmojis`                                  | Deletes emojis from a string.                                                                 |
+| `countEmojis`                                | Counts the number of emojis in a string.                                                      |
 
 **Note:** Digits are included in snake_case, kebab-case, and camelCase.
 
@@ -78,7 +83,12 @@ const {
     hasEmail,
     getEmails,
     delEmails,
-    countEmails
+    countEmails,
+    dateValidation,
+    hasEmoji,
+    getEmojis,
+    delEmojis,
+    countEmojis
 } = require('string-utils-basic');
 
 // Example usage:

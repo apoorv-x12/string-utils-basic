@@ -175,3 +175,9 @@ module.exports = {...module.exports, hasIpAddress, getIpAddresses, delIpAddresse
 
 const  { hasEmail, getEmails, delEmails, countEmails} = require('./validation/email.js');
 module.exports = {...module.exports, hasEmail, getEmails, delEmails, countEmails}
+
+const { dateValidation } = require('./validation/date.js');
+module.exports = {...module.exports, dateValidation}
+
+const { hasEmoji, getEmojis, delEmojis, countEmojis } = require('./manipulation/emoji.js');
+module.exports = {...module.exports, hasEmoji, getEmojis, delEmojis, countEmojis}
